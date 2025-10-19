@@ -50,7 +50,7 @@ export default function LoginForm() {
 
       <Button type="submit" variant="default" className="w-full">
   <LogIn className="w-4 h-4 mr-2" />
-  Sign in (static demo)
+  Sign in. (static demo)
 </Button>
 
       <p className="text-caption text-muted-foreground text-center">
