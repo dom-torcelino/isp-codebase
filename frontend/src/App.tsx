@@ -19,6 +19,13 @@ import type { UserRole, Ticket } from './lib/types';
 import { Toaster } from './components/ui/sonner';
 
 function App() {
+
+  //TODO Fix types of BreadcrumItem location
+  interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
   const [currentRole, setCurrentRole] = useState<UserRole>('system_admin');
   const [currentPath, setCurrentPath] = useState('/dashboard');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(true); // Closed by default on mobile
@@ -35,23 +42,23 @@ function App() {
     setTicketSheetOpen(true);
   };
 
-  const getBreadcrumbs = () => {
-    const pathParts = currentPath.split('/').filter(Boolean);
-    const breadcrumbs = [
-      { label: 'Dashboard', href: '/dashboard' }
-    ];
+  const getBreadcrumbs = (): BreadcrumbItem[] => {
+  const pathParts = currentPath.split('/').filter(Boolean);
+  const breadcrumbs: BreadcrumbItem[] = [
+    { label: 'Dashboard', href: '/dashboard' }
+  ];
 
-    if (pathParts.length > 1) {
-      pathParts.slice(1).forEach((part, index) => {
-        breadcrumbs.push({
-          label: part.charAt(0).toUpperCase() + part.slice(1),
-          href: index === pathParts.length - 2 ? undefined : `/${pathParts.slice(0, index + 2).join('/')}`
-        });
+  if (pathParts.length > 1) {
+    pathParts.slice(1).forEach((part, index) => {
+      breadcrumbs.push({
+        label: part.charAt(0).toUpperCase() + part.slice(1),
+        href: index === pathParts.length - 2 ? undefined : `/${pathParts.slice(0, index + 2).join('/')}`
       });
-    }
+    });
+  }
 
-    return breadcrumbs;
-  };
+  return breadcrumbs;
+};
 
   const getPageTitle = () => {
     if (currentPath === '/dashboard') {
