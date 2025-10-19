@@ -1,4 +1,4 @@
-import App from "@/App";
+import App from "../App";
 import { LoginForm } from "@/features/auth";
 import Link from "next/link";
 
