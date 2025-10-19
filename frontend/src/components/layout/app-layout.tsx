@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { CollapsibleSidebar } from './collapsible-sidebar';
 import { TopBar } from './top-bar';
 import { Breadcrumbs } from './breadcrumbs';
+import type { BreadcrumbItem } from './breadcrumbs';
 import type { UserRole } from '@/lib/types';
 import { Toaster } from '../ui/sonner';
 
@@ -33,7 +34,7 @@ export function AppLayout({
       return [{ label: 'Dashboard', href: '/dashboard' }];
     }
 
-    const breadcrumbs = [
+    const breadcrumbs: BreadcrumbItem[] = [
       { label: 'Dashboard', href: '/dashboard' }
     ];
 

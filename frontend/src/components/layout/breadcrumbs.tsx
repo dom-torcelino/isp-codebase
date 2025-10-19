@@ -1,7 +1,8 @@
+
 import { ChevronRight } from 'lucide-react';
 import { cn } from '../ui/utils';
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   label: string;
   href?: string;
 }
