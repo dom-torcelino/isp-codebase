@@ -1,0 +1,298 @@
+@import url('../index.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Design System Tokens - Light Mode */
+  --background: #FFFFFF;
+  --foreground: #101828;
+  --muted: #F4F5F7;
+  --muted-foreground: #667085;
+  
+  --card: #FFFFFF;
+  --card-foreground: #101828;
+  
+  --primary: #0052CC;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #EAECF0;
+  --secondary-foreground: #101828;
+  
+  --accent: #2E90FA;
+  --accent-foreground: #FFFFFF;
+  
+  --destructive: #DE350B;
+  --destructive-foreground: #FFFFFF;
+  
+  --success: #00875A;
+  --warning: #FFAB00;
+  --info: #2E90FA;
+  
+  --border: #EAECF0;
+  --input: #EAECF0;
+  --ring: #003F99;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #101828;
+  
+  /* Text colors */
+  --text-primary: #101828;
+  --text-secondary: #344054;
+  --text-muted: #667085;
+  --text-disabled: #98A2B3;
+  
+  /* Charts */
+  --chart-1: #0052CC;
+  --chart-2: #2E90FA;
+  --chart-3: #00875A;
+  --chart-4: #FFAB00;
+  --chart-5: #DE350B;
+  
+  /* Typography scale */
+  --text-display: 32px;
+  --text-h1: 24px;
+  --text-h2: 20px;
+  --text-h3: 18px;
+  --text-base: 16px;
+  --text-caption: 12px;
+  
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  
+  /* Spacing (multiples of 4) */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius: 12px; /* default */
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #101828;
+  --sidebar-primary: #0052CC;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F4F5F7;
+  --sidebar-accent-foreground: #101828;
+  --sidebar-border: #EAECF0;
+  --sidebar-ring: #003F99;
+}
+
+.dark {
+  /* Design System Tokens - Dark Mode */
+  --background: #0B1220;
+  --foreground: #E5E7EB;
+  --muted: #111827;
+  --muted-foreground: #98A2B3;
+  
+  --card: #0B1220;
+  --card-foreground: #E5E7EB;
+  
+  --primary: #0052CC;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #111827;
+  --secondary-foreground: #E5E7EB;
+  
+  --accent: #2E90FA;
+  --accent-foreground: #FFFFFF;
+  
+  --destructive: #DE350B;
+  --destructive-foreground: #FFFFFF;
+  
+  --success: #00875A;
+  --warning: #FFAB00;
+  --info: #2E90FA;
+  
+  --border: #111827;
+  --input: #111827;
+  --ring: #66A3FF;
+  
+  --popover: #0B1220;
+  --popover-foreground: #E5E7EB;
+  
+  /* Text colors */
+  --text-primary: #E5E7EB;
+  --text-secondary: #98A2B3;
+  --text-muted: #667085;
+  --text-disabled: #667085;
+  
+  /* Sidebar */
+  --sidebar: #0B1220;
+  --sidebar-foreground: #E5E7EB;
+  --sidebar-primary: #0052CC;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #111827;
+  --sidebar-accent-foreground: #E5E7EB;
+  --sidebar-border: #111827;
+  --sidebar-ring: #66A3FF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/**
+ * Base typography matching specs: Display/32, H1/24, H2/20, H3/18, Body/16, Caption/12
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    .display {
+      font-size: var(--text-display);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: var(--text-h1);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: var(--text-h2);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: var(--text-h3);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input, textarea, select {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    .caption {
+      font-size: var(--text-caption);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom utilities */
+@layer utilities {
+  .shadow-xs {
+    box-shadow: var(--shadow-xs);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-soft-lg {
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Focus ring utilities for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  /* Minimum touch target size (44x44) */
+  .touch-target {
+    @apply min-w-[44px] min-h-[44px];
+  }
+}
