@@ -48,9 +48,10 @@ export default function LoginForm() {
         />
       </div>
 
-      <Button type="submit" variant="primary" className="w-full" leftIcon={<LogIn className="w-4 h-4" />}>
-        Sign in (static demo)
-      </Button>
+      <Button type="submit" variant="default" className="w-full">
+  <LogIn className="w-4 h-4 mr-2" />
+  Sign in (static demo)
+</Button>
 
       <p className="text-caption text-muted-foreground text-center">
         This is a static demo. Any email/password will work.
